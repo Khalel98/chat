@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f0f2f5;
+}
+
+:root {
+  color-scheme: light only;
+}
+
+$orange: #f79824;
+$blue: #419fd9;
+$green: #32d47b;
+$white: #ffffff;
+$grey: #e5e5e5;
+$red: #eb5757;
+$black: #333a48;
+
+// Переменные для блока
+$minWidth: 320px;
+$maxWidth: 1152px;
+$maxWidthCon: 1144px;
+$md1: $maxWidthCon + 12;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+// Основная сетка
+._container {
+  max-width: $maxWidthCon;
+  margin: 0 auto;
+  padding: 0px 20px;
+
+  @media (max-width: $md1) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+.section__login {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  min-height: 100vh;
+  justify-content: center;
+  background: #f0f2f5;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: $md1;
+    width: 100%;
+    @media (max-width: $md2) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__preview {
+    @media (max-width: $md2) {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    &__header {
+      display: flex;
+      align-items: center;
+      @media (max-width: $md2) {
+        justify-content: center;
+      }
+    }
+    img {
+      margin-right: 20px;
+    }
+    &__title {
+      font-size: 45px;
+      color: $blue;
+      font-weight: 700;
+      @media (max-width: $md3) {
+        font-size: 35px;
+      }
+    }
+    &__subtitle {
+      font-size: 20px;
+      @media (max-width: $md3) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.login__wrapper {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+
+  @media (max-width: $md3) {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+.login__form {
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &__item {
+    background: $blue;
+    color: $white;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    &:hover {
+      background: #104cab;
+      cursor: pointer;
+    }
+  }
+  &__btn {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    color: #ffffff !important;
+    background: #2176ff;
+    @media (max-width: $md4) {
+      width: 100%;
+    }
+  }
+}
+
+.v-toolbar.v-toolbar--density-default.v-theme--light.v-locale--is-ltr.v-app-bar {
+  border: none !important;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25) !important;
+}
+//верхнее меню
+.sidebar__menu {
+  width: 100%;
+  background: $white !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  &__text {
+    color: $black;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    @media (max-width: $md3) {
+      font-size: 12px;
+    }
+    @media (max-width: $md4) {
+      font-size: 12px;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+
+    &__controls {
+      margin-left: 10px;
+    }
+  }
+}
+// Боковое меню
+.sidebar__container {
+  padding-top: 0;
+}
+
+.profile {
+  height: 64px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25) !important;
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: fill;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  &__body {
+    &__name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    &__nickname {
+      font-size: 12px;
+    }
+  }
+}
+
+.list__header {
+  padding: 0 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.v-navigation-drawer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.users {
+  padding-top: 30px;
+
+  .active {
+    background: $blue;
+    color: $white;
+  }
+  &__profile {
+    position: relative;
+    height: 64px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid $grey;
+
+    img {
+      width: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    &__body {
+      &__name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      &__nickname {
+        margin-top: 4px;
+        font-size: 12px;
+      }
+
+      span {
+        font-size: 10px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+  }
+}
+
+.chat {
+  max-height: calc(100vh - 104px); /* Изменяем высоту на max-height */
+  overflow-y: auto; /* auto вместо scroll */
+  padding: 30px; /* Убрать паддинг */
+  position: relative;
+  // padding-bottom: 80px;
+  .message {
+    &__self {
+      display: flex;
+      justify-content: flex-end;
+      text-align: right;
+    }
+    &__other {
+      display: flex;
+      justify-content: flex-start;
+      text-align: left;
+    }
+    &__block {
+      position: relative;
+      width: auto;
+      min-width: 100px;
+      max-width: 45%;
+      padding: 25px;
+      padding-bottom: 35px;
+      margin: 20px 15px;
+      margin-bottom: 0px;
+      background: #fff;
+      border-radius: 7px;
+      @media (max-width: 1100px) {
+        min-width: 100px;
+        max-width: 90%;
+      }
+    }
+    &__content {
+      word-wrap: break-word;
+      @media (max-width: 1100px) {
+        font-size: 12px;
+      }
+    }
+    &__time {
+      display: block;
+      position: absolute;
+      right: 10px;
+      bottom: 6px;
+      color: #aaa;
+      user-select: none;
+    }
+  }
+  &__input {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    width: 100%;
+    left: 0;
+    display: flex;
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+    }
+  }
+
+  .partwidth {
+    left: 256px;
+  }
+}
+
+.mainContent {
+  background: url(https://images.unsplash.com/photo-1463058837219-41e13a132b7d?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=)
+    100% center;
+}
+
+.logout {
+  height: 40px;
+  background: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+}
+.logout__icon {
+  width: 24px;
+}
+
+.chat__input {
+  input {
+    height: 40px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.users__filter {
+  padding: 0px 10px 20px 10px;
+}
